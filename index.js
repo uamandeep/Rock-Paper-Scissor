@@ -8,7 +8,7 @@ function getComputerChoice(){
 }
 
 function getHumanChoice(){
-    let humanAttack = prompt("Enter your attack ['rock','paper','scissors']");
+    let humanAttack = prompt("Enter your attack ['rock','paper','scissors']").toLocaleLowerCase;
     if(humanAttack==='rock' || humanAttack==='scissors' || humanAttack==='paper'){
         return humanAttack;
     }
@@ -18,5 +18,13 @@ function getHumanChoice(){
 }
 
 function playRound(humanChoice, computerChoice){
-    
+    if(humanChoice==='rock' && computerChoice === 'rock' || humanChoice==='scissors' && computerChoice === 'scissors' || humanChoice==='paper' && computerChoice === 'paper' ){
+        console.log('DRAW!');
+    }
+    else if(humanChoice==='rock' && computerChoice === 'paper' || humanChoice==='scissors' && computerChoice === 'rock' || humanChoice==='paper' && computerChoice === 'scissors'){
+        console.log('COMPUTER WINS!');
+    }
+    else{
+        console.log("YOU WIN!");
+    }
 }
